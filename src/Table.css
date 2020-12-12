@@ -1,0 +1,37 @@
+/* .table {
+  width: 100%;
+  height: 100%;
+  position: relative;
+} */
+
+/* .table__wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+/* .table__centered {
+  position: fixed; /* or absolute */
+/* top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+  transform: translate(-50%, -50%); 
+} */
+
+
+
+/* 
+className={classes.table}
+aria-label="simple table"
+fixedHeader={true}
+style={{ width: "auto", tableLayout: "auto", margin: " 0 auto" }} */
+
+
+
+/*
+https://stackoverflow.com/questions/59451525/css-add-on-image-a-bagde-to-see-the-online-offline-status
+https://www.w3schools.com/bootstrap/bootstrap_badges_labels.asp
+
+*/

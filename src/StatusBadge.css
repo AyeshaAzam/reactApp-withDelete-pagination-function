@@ -1,0 +1,10 @@
+.statusBadge button {
+  width: 60px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.statusBadge span {
+  font-size: 12px;
+}
