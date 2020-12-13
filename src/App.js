@@ -37,16 +37,16 @@ function App() {
     getCountriesData();
   }, []);
 
-  const deleteCountryRow = (rowId) => {
+  const deleteCountryRow = (country) => {
+    const countriesDataCopy =  [...countriesData];
     try {
-      const countriesDataCopy = { ...countriesData };
       //let countryCopy = countriesDataCopy.filter((row) => row.id !== rowId);
-      countriesDataCopy.splice(countriesDataCopy.indexOf(rowId), 1);
+      countriesDataCopy.splice(countriesDataCopy.indexOf(country), 1);
       console.log(" countriesDataCopy", countriesDataCopy);
       setCountriesData(countriesDataCopy);
     } catch (err) {
       console.log(err);
-      console.log("failed to delete the row", rowId);
+      console.log("failed to delete the row", country, countriesDataCopy);
     }
   };
   //console.log("setCountriesData", countriesData);

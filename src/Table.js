@@ -66,11 +66,7 @@ function TableData({ countries, onDelete, isLoading, id }) {
             </TableHead>
             <TableBody>
               {countries.map((country, index) => (
-                <TableRow
-                  key={index}
-                  style={{ width: 100 }}
-                  onClick={() => onDelete(country.countryInfo._id)}
-                >
+                <TableRow key={index} style={{ width: 100 }}>
                   <TableCell align="right" onClick={openModal}>
                     {/* //  or i can do direct inside the tablecell : onClick={() => setOpen(true)} */}
                     <StatusBadgeIcon />
@@ -81,7 +77,7 @@ function TableData({ countries, onDelete, isLoading, id }) {
                   <TableCell align="right">{country.cases}</TableCell>
                   <TableCell align="right">{country.deaths}</TableCell>
                   <TableCell align="right">
-                    <DeleteIcon />
+                    <DeleteIcon onClick={() => onDelete(country)} />
                   </TableCell>
                 </TableRow>
               ))}

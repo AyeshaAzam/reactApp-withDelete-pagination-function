@@ -38,30 +38,28 @@ const Modal = ({ closeModal, countriesCurrentInfo }) => {
 
   return (
     <div>
-      <div>
-        <div className={classes.paper} style={modalStyle}>
-          <div className="header__modal-container">
-            <header className="header__modal">
-              <h4>Current Information</h4>
-            </header>
-            {countriesCurrentInfo.map((currentInfo, index) => (
-              <div>
-                <p className="header__modalText">
-                  Corona-Cases for Today: {currentInfo.todayCases}
-                </p>
-                <p className="header__modalText">
-                  Today Recovery : {currentInfo.todayRecovered}
-                </p>
-                <p className="header__modalText">
-                  Total deaths today: {currentInfo.todayDeaths}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div>
-            {/* <button onClose={(e) => setOpen(false)}>Close</button> */}
-            <button onClick={closeModal}>Close</button>
-          </div>
+      <div className={classes.paper} style={modalStyle}>
+        <div className="header__modal-container">
+          <header className="header__modal">
+            <h4>Current Information</h4>
+          </header>
+          {countriesCurrentInfo.map((currentInfo, key) => (
+            <div key={key}>
+              <p className="header__modalText">
+                Corona-Cases for Today: {currentInfo.todayCases}
+              </p>
+              <p className="header__modalText">
+                Today Recovery : {currentInfo.todayRecovered}
+              </p>
+              <p className="header__modalText">
+                Total deaths today: {currentInfo.todayDeaths}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div>
+          {/* <button onClose={(e) => setOpen(false)}>Close</button> */}
+          <button onClick={closeModal}>Close</button>
         </div>
       </div>
     </div>
