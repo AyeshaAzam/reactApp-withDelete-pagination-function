@@ -19,3 +19,5 @@ This is a simple project with several functioanality
   - has <a href="#" and linked to new window tab
   - has Hover and focus styling and more....
 
+<img src="https://github.com/AyeshaAzam/TikTok-Clone-With-Firebase-and-React/blob/master/src/images/Tiktok-1.PNG" />
+  <img src="https://github.com/AyeshaAzam/TikTok-Clone-With-Firebase-and-React/blob/master/src/images/Tiktok-2.PNG" />
