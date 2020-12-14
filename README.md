@@ -21,7 +21,7 @@ This is a simple project with several functioanality
   - Has Hover and focus styling and more....
 
 <img src="https://github.com/AyeshaAzam/reactApp-withDelete-pagination-function/blob/master/src/images/covid-19.PNG" />
-  <img src="https://github.com/AyeshaAzam/TikTok-Clone-With-Firebase-and-React/blob/master/src/images/covid-19-Modal.PNG" />
-    <img src="https://github.com/AyeshaAzam/TikTok-Clone-With-Firebase-and-React/blob/master/src/images/covid-19-afterDeleting.PNG" />
-      <img src="https://github.com/AyeshaAzam/TikTok-Clone-With-Firebase-and-React/blob/master/src/images/covid-19-hoverAndFocus.PNG" /> 
-      <img src="https://github.com/AyeshaAzam/TikTok-Clone-With-Firebase-and-React/blob/master/src/images/covid-19-hover.PNG" />
+  <img src="https://github.com/AyeshaAzam/reactApp-withDelete-pagination-function/blob/master/src/images/covid-19-Modal.PNG" />
+  <img src="https://github.com/AyeshaAzam/reactApp-withDelete-pagination-function/blob/master/src/images/covid-19-afterDeleting.PNG"/>
+  <img src="https://github.com/AyeshaAzam/reactApp-withDelete-pagination-function/blob/master/src/images/covid-19-hoverAndFocus.PNG"/>
+  <img src="https://github.com/AyeshaAzam/reactApp-withDelete-pagination-function/blob/master/src/images/covid-19-hover.PNG"/>
