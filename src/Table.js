@@ -9,6 +9,7 @@ import TableRow from "@material-ui/core/TableRow";
 import { makeStyles } from "@material-ui/core/styles";
 import StatusBadgeIcon from "./StatusBadgeIcon";
 import Modal from "./Modal";
+import "./Table.css";
 
 const useStyles = makeStyles({
   table: {
@@ -20,7 +21,7 @@ const useStyles = makeStyles({
 
 function TableData({ countries, onDelete, isLoading, id }) {
   const classes = useStyles();
-  const [open, setOpen] = useState(false);
+  const [openCountryModal, setOpenCountryModal] = useState(false);
 
   if (isLoading) {
     return <h2>Loading...</h2>;
@@ -28,20 +29,50 @@ function TableData({ countries, onDelete, isLoading, id }) {
 
   const openModal = () => {
     console.log("I have been clicked....");
-    setOpen(true);
+    setOpenCountryModal(true);
   };
 
   const closeModal = () => {
     console.log("closing Modal");
-    setOpen(false);
+    setOpenCountryModal(false);
   };
+
+  const getModal = (country) => {
+    openModal();
+    setOpenCountryModal(country);
+  };
+
+  // for tabbing not using the keyboard keys
+  const myFocusIn = (event) => {
+    event.preventDefault();
+    // const currentTarget = event.currentTarget as HTMLElement;
+    const currentTarget = event.currentTarget;
+    currentTarget.classList.add("table__tableBody--has-focus");
+  };
+
+  const myFocusOut = (event) => {
+    event.preventDefault();
+    const currentTarget = event.currentTarget;
+    currentTarget.classList.remove("table__tableBody--has-focus");
+  };
+
+  // const onKeyPress = (event) => {
+  //   //Invoke callback on enter key
+  //   //KeyCodes.Enter = 13
+  //   if (event.charCode === 13) {
+  //     // do something
+  //     props.clickCallback && props.clickCallback(event);
+  //   }
+  // };
+
+  //const onClick = (event) => {};
 
   return (
     <div className="mytable">
       <div className="table__centered">
         {/* // this opens the Modal and also sending props to close it */}
-        {open && (
-          <Modal closeModal={closeModal} countriesCurrentInfo={countries} />
+        {openCountryModal && (
+          <Modal closeModal={closeModal} currentCountry={openCountryModal} />
         )}
         <TableContainer className="table__container">
           <Table
@@ -53,7 +84,10 @@ function TableData({ countries, onDelete, isLoading, id }) {
               <TableRow style={{ width: 100 }}>
                 <TableCell align="right"></TableCell>
                 <TableCell variant="head">
-                  <strong>Name</strong>
+                  <strong>Flag</strong>
+                </TableCell>
+                <TableCell variant="head">
+                  <strong>Country</strong>
                 </TableCell>
                 <TableCell align="right">
                   <strong>Cases</strong>
@@ -66,18 +100,45 @@ function TableData({ countries, onDelete, isLoading, id }) {
             </TableHead>
             <TableBody>
               {countries.map((country, index) => (
-                <TableRow key={index} style={{ width: 100 }}>
-                  <TableCell align="right" onClick={openModal}>
+                <TableRow
+                  key={index}
+                  style={{ width: 100 }}
+                  className="table__tableBody"
+                  onFocus={myFocusIn}
+                  onBlur={myFocusOut}
+                >
+                  <TableCell align="right" onClick={() => getModal(country)}>
                     {/* //  or i can do direct inside the tablecell : onClick={() => setOpen(true)} */}
                     <StatusBadgeIcon />
                   </TableCell>
-                  <TableCell component="th" scope="row">
-                    {country.country}
+                  <TableCell align="right" className="table__countryFlag">
+                    {
+                      <img
+                        src={country.countryInfo.flag}
+                        alt="logo"
+                        width="48"
+                      />
+                    }
+                  </TableCell>
+                  <TableCell
+                    component="th"
+                    scope="row"
+                    className="table__country"
+                  >
+                    <a
+                      target="_blank"
+                      href="https://disease.sh/"
+                      className="table__text-link"
+                    >
+                      <span>{country.country}</span>
+                    </a>
                   </TableCell>
                   <TableCell align="right">{country.cases}</TableCell>
                   <TableCell align="right">{country.deaths}</TableCell>
                   <TableCell align="right">
-                    <DeleteIcon onClick={() => onDelete(country)} />
+                    <button className="table__delete-the-row">
+                      <DeleteIcon onClick={() => onDelete(country)} />
+                    </button>
                   </TableCell>
                 </TableRow>
               ))}

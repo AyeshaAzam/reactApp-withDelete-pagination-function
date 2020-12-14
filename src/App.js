@@ -19,14 +19,6 @@ function App() {
       await fetch("https://disease.sh/v3/covid-19/countries")
         .then((response) => response.json())
         .then((data) => {
-          //console.log("data", data);
-          // const countries = data.map((country) => ({
-          //   name: country.country,
-          //   cases: country.cases,
-          //   deaths: country.deaths,
-          //   id: country.countryInfo,
-          // }));
-
           console.log("countries data", data);
           setCountriesData(data.slice(0, 25)); // just want to have first 25 records
           setIsLoading(false);
@@ -38,7 +30,7 @@ function App() {
   }, []);
 
   const deleteCountryRow = (country) => {
-    const countriesDataCopy =  [...countriesData];
+    const countriesDataCopy = [...countriesData];
     try {
       //let countryCopy = countriesDataCopy.filter((row) => row.id !== rowId);
       countriesDataCopy.splice(countriesDataCopy.indexOf(country), 1);
@@ -66,7 +58,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Todo-module with jedi-base example</h1>
+      <h1>Current Information about Covid- 19 </h1>
 
       <div className="app__countriesLists">
         {/* {countriesData.map(({ name, cases, deaths }) => (

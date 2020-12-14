@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-//import Modal from "@material-ui/core/Modal";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -29,12 +28,9 @@ function getModalStyle() {
   };
 }
 
-const Modal = ({ closeModal, countriesCurrentInfo }) => {
-  // const [open, setOpen] = useState(true);
-
+const Modal = ({ closeModal, currentCountry }) => {
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
-  console.log(" from Modal >>>> ", countriesCurrentInfo);
 
   return (
     <div>
@@ -43,19 +39,18 @@ const Modal = ({ closeModal, countriesCurrentInfo }) => {
           <header className="header__modal">
             <h4>Current Information</h4>
           </header>
-          {countriesCurrentInfo.map((currentInfo, key) => (
-            <div key={key}>
-              <p className="header__modalText">
-                Corona-Cases for Today: {currentInfo.todayCases}
-              </p>
-              <p className="header__modalText">
-                Today Recovery : {currentInfo.todayRecovered}
-              </p>
-              <p className="header__modalText">
-                Total deaths today: {currentInfo.todayDeaths}
-              </p>
-            </div>
-          ))}
+          <p className="header__modalText">
+            Corona-Cases for Today: <strong>{currentCountry.todayCases}</strong>
+          </p>
+          <p className="header__modalText">
+            Today Recovery : <strong>{currentCountry.todayRecovered}</strong>
+          </p>
+          <p className="header__modalText">
+            Total deaths today: <strong>{currentCountry.todayDeaths}</strong>
+          </p>
+          <p className="header__modalText">
+            Country's ISO2: <strong>{currentCountry.countryInfo.iso2}</strong>
+          </p>
         </div>
         <div>
           {/* <button onClose={(e) => setOpen(false)}>Close</button> */}
@@ -67,3 +62,5 @@ const Modal = ({ closeModal, countriesCurrentInfo }) => {
 };
 
 export default Modal;
+
+//watch this : https://codesandbox.io/s/53x7m726xk?file=/src/Product/Product.js
