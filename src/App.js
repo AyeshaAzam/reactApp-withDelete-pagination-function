@@ -9,8 +9,6 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5); // number of  post we want is 5 perpage
 
-  // check this video out : https://www.youtube.com/watch?v=FiGmAI5e91M
-  // and also for pagination: https://www.youtube.com/watch?v=IYCa1F-OWmk
 
   // // when the  app component load then show us the country data onloads...
   useEffect(() => {
