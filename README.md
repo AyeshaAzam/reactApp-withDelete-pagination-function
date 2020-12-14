@@ -14,10 +14,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ### About Project
 This is a simple project with several functioanality
-  - has delete function
-  - has Modal with current information about current covid-19 status
-  - has <a href="#" and linked to new window tab
-  - has Hover and focus styling and more....
+  - Has delete function
+  - Has Modal with current information about current covid-19 status
+  - Has <a href="#" and linked to new window tab
+  - Have implementated pagination
+  - Has Hover and focus styling and more....
 
 <img src="https://github.com/AyeshaAzam/reactApp-withDelete-pagination-function/blob/master/src/images/covid-19.PNG" />
-  <img src="https://github.com/AyeshaAzam/TikTok-Clone-With-Firebase-and-React/blob/master/src/images/covid-19-Modal" />
+  <img src="https://github.com/AyeshaAzam/TikTok-Clone-With-Firebase-and-React/blob/master/src/images/covid-19-Modal.PNG" />
+    <img src="https://github.com/AyeshaAzam/TikTok-Clone-With-Firebase-and-React/blob/master/src/images/covid-19-afterDeleting.PNG" />
+      <img src="https://github.com/AyeshaAzam/TikTok-Clone-With-Firebase-and-React/blob/master/src/images/covid-19-hoverAndFocus.PNG" /> 
+      <img src="https://github.com/AyeshaAzam/TikTok-Clone-With-Firebase-and-React/blob/master/src/images/covid-19-hover.PNG" />
