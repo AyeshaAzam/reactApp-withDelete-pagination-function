@@ -56,15 +56,6 @@ function TableData({ countries, onDelete, isLoading, id }) {
     currentTarget.classList.remove("table__tableBody--has-focus");
   };
 
-  // const onKeyPress = (event) => {
-  //   //Invoke callback on enter key
-  //   //KeyCodes.Enter = 13
-  //   if (event.charCode === 13) {
-  //     // do something
-  //     props.clickCallback && props.clickCallback(event);
-  //   }
-  // };
-
   //const onClick = (event) => {};
 
   return (
